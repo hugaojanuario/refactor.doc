@@ -10,7 +10,6 @@ func TxtToRTF(inputPath string, outputPath string) error {
 		return err
 	}
 
-	// Estrutura básica de RTF
 	rtfContent := "{\\rtf1\\ansi\n"
 	rtfContent += string(content)
 	rtfContent += "\n}"
