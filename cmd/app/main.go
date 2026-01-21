@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/hugaojanuario/refactor.doc/internal/converter"
 	"log"
+
+	"github.com/hugaojanuario/refactor.doc/internal/converter"
 )
 
 func main() {
@@ -11,11 +12,12 @@ func main() {
 
 	err := converter.ConvertTxtToDocx(
 		"input/exemplo.txt",
-		"output/exemplo.docx")
+		"output/exemplo.docx",
+	)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Conversão finalizada com sucesso!")
+	fmt.Println("Conversao finalizada com sucesso!")
 }

@@ -1,18 +1,14 @@
 package converter
 
-import (
-	"os"
-)
+import "os"
 
 func TxtToRTF(inputPath string, outputPath string) error {
-	content, err := os.ReadFile(inputPath)
+	text, err := os.ReadFile(inputPath)
 	if err != nil {
 		return err
 	}
 
-	rtfContent := "{\\rtf1\\ansi\n"
-	rtfContent += string(content)
-	rtfContent += "\n}"
+	rtf := "{\\rtf1\\ansi\n" + string(text) + "\n}"
 
-	return os.WriteFile(outputPath, []byte(rtfContent), 0644)
+	return os.WriteFile(outputPath, []byte(rtf), 0644)
 }
